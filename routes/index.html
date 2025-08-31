@@ -1,12 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Node.js DevOps App</title>
-  <link rel="stylesheet" href="../public/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+
+  <!-- Gradient background and styling -->
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #00ffff, #00bfff, #7fffd4);
+      color: white;
+      text-align: center;
+      flex-direction: column;
+    }
+    h1 {
+      font-size: 3em;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+    p {
+      font-size: 2em;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello from Node.js DevOps App!</h1>
-  <p>Deployed on Azure VM.</p>
-  <script src="../public/js/script.js"></script>
+  <h1>Welcome to MS Corporation</h1>
+  <p>Redirecting in <span id="countdown">7</span> seconds...</p>
+
+  <script>
+    let timeLeft = 7;
+    const countdownEl = document.getElementById('countdown');
+
+    const timer = setInterval(() => {
+      timeLeft--;
+      countdownEl.textContent = timeLeft;
+
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        window.location.href = "https://mscorp7.github.io/"; // redirect URL
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
